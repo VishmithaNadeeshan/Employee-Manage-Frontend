@@ -1,1 +1,28 @@
-<p>employee-list works!</p>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Department</th>
+        <th>Created At</th><th>Updated At</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.createdAt }}</td>
+        <td>{{ emp.updatedAt }}</td>
+        <td>
+          <button (click)="editEmployee(emp.id)">Edit</button>
+          <button (click)="deleteEmployee(emp.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <button routerLink="/add">Add New Employee</button>
+</div>
+
+  <h1>hello</h1>
